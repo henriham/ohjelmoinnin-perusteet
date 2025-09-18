@@ -1,4 +1,4 @@
-print("Calculta fuel consumption")
+print("Calculate fuel consumption")
 Feed = input("Enter travel distance(kilometers): ")
 Distance = int(Feed)
 Feed = input("Enter fuel usage(liters): ")
