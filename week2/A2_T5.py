@@ -1,0 +1,13 @@
+print(f"Program starting.")
+word = input("Insert a closed compound word: ")
+print(f"The word you inserted is '{word}' and in reverse it is {word[::-1]}")
+print(f"The inserted word length is {len(word)}")
+print(f"Last character is '{word[-1::]}'")
+print(f"")
+print(f"Take substring from the inserted word by insrting...")
+sub_str_one =  int(input("1) Starting point: "))
+sub_str_two =  int(input("2) Ending point: "))
+sub_str_three = int(input("3) Step size: "))
+sub_word = word[sub_str_one:sub_str_two:sub_str_three]
+print(f"The word '{word}' sliced to the defined substring is '{sub_word}'.")
+print(f"Program ending")
