@@ -2,9 +2,9 @@ print("Program starting.")
 print("Welcome to the unit converter program!")
 print("Follow the menu instructions below.")
 print("")
-print("Options: ")
+print("Options:")
 print("1 - Length")
-print("2 - Weigth")
+print("2 - Weight")
 print("0 - Exit")
 user_choice = float(input("Your choice: "))
 
@@ -14,7 +14,7 @@ elif user_choice == 0:
 	print("Exiting...")
 elif user_choice == 1:
 	print("")
-	print("Length.options: ")
+	print("Length options:")
 	print("1 - Meters to kilometers")
 	print("2 - Kilometers to meters")
 	print("0 - Exit")
@@ -29,7 +29,7 @@ elif user_choice == 1:
 		print(f"{user_subchoice} km is {user_subchoice * 1000} m")
 elif user_choice == 2:
 	print("")
-	print("Weight.options: ")
+	print("Weight options:")
 	print("1 - Grams to pounds")
 	print("2 - Pounds to grams")
 	print("0 - Exit")
@@ -41,6 +41,6 @@ elif user_choice == 2:
 		print(f"{user_subchoice} g is {user_subchoice * 0.00220462:.4f} lb")
 	elif user_subchoice == 2:
 		user_subchoice = float(input("Insert pounds: "))
-		print(f"{user_subchoice} lb is {user_subchoice * 453.59237:.1f}")
+		print(f"{user_subchoice} lb is {user_subchoice * 453.59237:.1f} g")
 print("")
 print("Program ending.")
