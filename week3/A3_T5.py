@@ -13,5 +13,6 @@ elif user_choice == 1:
 elif user_choice == 2:
 	user_input = float(input("Insert the amount of Fahrenheit: "))
 	print(f"{user_input:.1f} °F equals to {((user_input-32)/1.8):.1f} °C")
+else: print("Unknown option.")
 print("")
 print("Program ending.")
