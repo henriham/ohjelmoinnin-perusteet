@@ -16,10 +16,5 @@ while number >= 1:
     print(string)
     print(f"Sequence had {i} total steps.")
     break
-    
-  
-
-
-
 print("")
 print("Program ending.")
