@@ -2,17 +2,23 @@ print("Program starting.")
 print("")
 print("Check multiplicative persistence.")
 number = int(input("Insert an integer: "))
-digits = []
-string = ""
-acc = 1
+step = 0
+while number >= 10:
+  string = ""
+  acc = 1
+  for index, i in enumerate(str(number)):
+    if index == len(str(number))-1:
+      acc *= int(i)
+      string += f"{i} = {acc}"
+      number = acc
+      step += 1
+    else:
+      acc *= int(i)
+      string += f"{i} * "
+  print(string)
+print("No more steps.")
+print("")
+print(f"This program took {step} step(s)")
+print("")
+print("Program ending.")
 
-for i in str(number):
-  digits.append(int(i))
-for i in range(len(digits)):
-  if i == len(digits) - 1:
-    acc *= digits[i]
-    string += f"{digits[i]} = {acc}"
-  elif len(digits) > 0:
-    string += f"{digits[i]} * "
-    acc *= digits[i]
-print(string)
