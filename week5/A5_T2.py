@@ -5,6 +5,7 @@ def frameWord(input):
     print(f"**{asterisks}**")
     print(f"* {input} *")
     print(f"**{asterisks}**")
+    return None
 
 def main():
   print("Program starting.")
@@ -13,8 +14,6 @@ def main():
   frameWord(Pword)
   print("")
   print("Program ending.")
-  
   return None
 
-  
 main()
