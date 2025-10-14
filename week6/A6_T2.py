@@ -1,0 +1,10 @@
+print("Program starting.")
+fname = input('Insert first name: ')
+lname = input('Insert last name: ')
+filename = input('insert file name: ')
+file = open(filename, 'w', encoding="utf-8")
+file.write(fname + "\n")
+file.write(lname)
+file.close()
+
+print('Program ending.')
