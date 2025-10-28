@@ -2,7 +2,7 @@
 def analyzer():
   acc = []
   name = ""
-
+  count = 0
   filename = input("Insert filename to read: ")
   file = open(filename, "r")
   lines = file.readlines()
@@ -12,10 +12,12 @@ def analyzer():
       continue
     name += str(f'{line.strip()};')
     acc.append(line.strip())
+    count += 1
+    
   file.close()
 
   print("### REPORT BEGIN ###")
-  print(f"Name count -  {i}")
+  print(f"Name count -  {count}")
   print(f"Shortest name - {min(len(w) for w in acc)} chars")
   print(f"Longest name - {max(len(w) for w in acc)} chars")
   print(f"Average name - {sum(len(w) for w in acc)/(len(acc)):.2f}")
