@@ -10,8 +10,7 @@ def writeFile(Pdata):
     print("Ciphered text saved!")
   else:
     print("File name not defined.\nAborting save operation.")
-
-
+  return None
 
 def askRows():
   inputStr = ""
@@ -20,7 +19,7 @@ def askRows():
     if len(feed) == 0:
       return inputStr
     else:
-      inputStr += feed + ";"
+      inputStr += feed + "\n"
 
 def shiftCharacter(input):
   if input.islower():
