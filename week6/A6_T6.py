@@ -45,6 +45,7 @@ def rot13(inputStr):
 
 def main():
   print("Program starting.\n")
+  print("Collecting plain text rows for ciphering.")
   data = askRows()
   print("\n#### Ciphered text ####")
   print(rot13(data))
