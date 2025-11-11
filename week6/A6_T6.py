@@ -1,15 +1,11 @@
 LOWER_ALPHABETS = "abcdefghijklmnopqrstuvwxyz"
 UPPER_ALPHABETS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-def writeFile(Pdata):
-  filename = input("Insert filename to save: ")
-  if filename:
-    file = open(filename, "w")
-    file.write(Pdata)
-    file.close()
-    print("Ciphered text saved!")
-  else:
-    print("File name not defined.\nAborting save operation.")
+def writeFile(filename, content):
+  file = open(filename, 'w', encoding="UTF-8")
+  file.write(content)
+  file.close()
+  print("Ciphered text saved!")
   return None
 
 def askRows():
@@ -21,37 +17,39 @@ def askRows():
     else:
       inputStr += feed + "\n"
 
-def shiftCharacter(input):
-  if input.islower():
-    for index, char in enumerate(LOWER_ALPHABETS):
-      if input == LOWER_ALPHABETS[index]:
-        return LOWER_ALPHABETS[(index + 13) % len(LOWER_ALPHABETS)]
-  elif input.isupper():
-    for index, char in enumerate(UPPER_ALPHABETS):
-      if input == UPPER_ALPHABETS[index]:
-        return UPPER_ALPHABETS[(index + 13) % len(UPPER_ALPHABETS)]
+def shiftCharacter(char, alphabet, shift=13):
+  if char in alphabet:
+    index = alphabet.index(char)
+    return alphabet[(index + shift) % len(alphabet)]
   else:
-    return input
+    return char
 
 def rot13(inputStr):
-  #string = sana;jotai;muuta;
   rot13str = ""
   for char in inputStr:
-    if char == ";":
-      rot13str += "\n"
-    else:  
-      rot13str += shiftCharacter(char)
+    if char.islower():
+      rot13str += shiftCharacter(char, LOWER_ALPHABETS)
+    elif char.isupper():
+      rot13str += shiftCharacter(char, UPPER_ALPHABETS)
+    else:
+      rot13str += char
   return rot13str
 
 def main():
   print("Program starting.\n")
   print("Collecting plain text rows for ciphering.")
   data = askRows()
+  ciphered = rot13(data)
   print("\n#### Ciphered text ####")
-  print(rot13(data))
+  print(ciphered)
   print("#### Ciphered text ####")
-  writeFile(rot13(data))
+  filename = input("Insert filename to save: ")
+  if filename:
+    writeFile(filename, ciphered)
+  else:
+    print("File name not defined.\nAborting save operation.")
   print("Program ending.")
+  return None
 
 if __name__ == "__main__":
-	main()
+  main()
